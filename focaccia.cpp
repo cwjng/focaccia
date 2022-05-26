@@ -1,15 +1,3 @@
-/**
- * focaccia.cpp
- *
- * <#Name#>
- * <#Uniqname#>
- *
- * EECS 183: Project 1
- * Winter 2022
- * 
- * Project UID: fde244392017fe65ebcc34f01c226b11f113bb3dc6dae8af4cb6ea11bf76f7c8
- */
-
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -41,9 +29,28 @@ int main() {
     cout << "How many people do you need to serve? ";
     cin >> people;
     cout << endl << endl;
-
-    // TODO: add your code below
-
+    //calculate number of loaves needed
+    int loaf = ceil(people / 4.0);
+    cout << "You need to make: " << loaf << " " << pluralize("loaf", "loaves", loaf) << " of focaccia" << endl;
+    
+    // Calculate ingredients and total cost
+    int bag = ceil(loaf * 5 / 20);
+    int package = ceil(loaf * 1.75 / 2.25);
+    int canister = ceil(loaf * 1.875 / 6);
+    int bottle = ceil(loaf * 2 / 33.783);
+    double cost = (2.69 * bag) + (0.4 * package) + (0.49 * canister) + (6.39 * bottle);
+    
+    // Display shopping list
+    cout << "Shopping List for Focaccia Bread" << endl << "--------------------------------" << endl;
+    cout << bag << " " << pluralize("bag", "bags", bag) << " of flour" << endl;
+    cout << package << " " << pluralize("package", "packages", package) << " of yeast" << endl;
+    cout << canister << " " << pluralize("canister", "canisters", canister) << " of salt" << endl;
+    cout << bottle << " " << pluralize("bottles", "bottles", bottle) << " of oil" << endl;
+    
+    // Display total cost
+    cout << "Total expected cost of ingredients: $" << cost << endl
+        << "\nHave a great party!";
+        
     return 0;
 }
 
