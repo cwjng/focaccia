@@ -30,7 +30,7 @@ int main() {
     cin >> people;
     cout << endl << endl;
     //calculate number of loaves needed
-    int loaf = ceil(people / 4.0);
+    double loaf = ceil(people / 4.0);
     cout << "You need to make: " << loaf << " " << pluralize("loaf", "loaves", loaf) << " of focaccia" << endl;
     
     // Calculate ingredients and total cost
@@ -45,7 +45,7 @@ int main() {
     cout << bag << " " << pluralize("bag", "bags", bag) << " of flour" << endl;
     cout << package << " " << pluralize("package", "packages", package) << " of yeast" << endl;
     cout << canister << " " << pluralize("canister", "canisters", canister) << " of salt" << endl;
-    cout << bottle << " " << pluralize("bottles", "bottles", bottle) << " of oil" << endl;
+    cout << bottle << " " << pluralize("bottle", "bottles", bottle) << " of oil" << endl;
     
     // Display total cost
     cout << "Total expected cost of ingredients: $" << cost << endl
